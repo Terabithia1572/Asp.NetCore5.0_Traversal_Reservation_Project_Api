@@ -75,6 +75,7 @@ namespace Asp.NetCore5._0_Traversal_Reservation_Project_Api.Controllers
                 visitorContext.Update(values);
                 visitorContext.SaveChanges();
                 return Ok();
+                //NULL
             }
         }
     }
