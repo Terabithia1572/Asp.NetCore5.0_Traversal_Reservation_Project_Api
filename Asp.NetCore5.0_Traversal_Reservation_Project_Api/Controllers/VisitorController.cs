@@ -1,5 +1,6 @@
 ﻿using Asp.NetCore5._0_Traversal_Reservation_Project_Api.DAL.Context;
 using Asp.NetCore5._0_Traversal_Reservation_Project_Api.DAL.Entities;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Asp.NetCore5._0_Traversal_Reservation_Project_Api.Controllers
 {
+    [EnableCors]
     [Route("api/[controller]")]
     [ApiController]
     public class VisitorController : ControllerBase

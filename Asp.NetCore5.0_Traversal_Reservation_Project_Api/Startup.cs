@@ -31,6 +31,14 @@ namespace Asp.NetCore5._0_Traversal_Reservation_Project_Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Asp.NetCore5._0_Traversal_Reservation_Project_Api", Version = "v1" });
             });
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("TraversalApiCors", opts =>
+                {
+                    opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +52,8 @@ namespace Asp.NetCore5._0_Traversal_Reservation_Project_Api
             }
 
             app.UseRouting();
+
+            app.UseCors("TraversalApiCors"); // cors adý istiyor yukarýdaki methotta yazdýðýmýz kors adýný giriyoruz
 
             app.UseAuthorization();
 
